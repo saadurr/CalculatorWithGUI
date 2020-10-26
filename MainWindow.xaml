@@ -1,0 +1,264 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace CalculatorWithUI
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        long firstOperand = 0;
+        long secondOperand = 0;
+        char mathOperator = ' ';
+        short resultNum = 0;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void btn_number1_Click(object sender, RoutedEventArgs e)
+        {
+            if (mathOperator == ' ')
+            {
+                firstOperand = (firstOperand * 10) + 1;
+                operationDisplay.Text = firstOperand.ToString();
+            }
+            else
+            {
+                secondOperand = (secondOperand * 10) + 1;
+                operationDisplay.Text = secondOperand.ToString();
+            }
+        }
+
+        private void btn_number2_Click(object sender, RoutedEventArgs e)
+        {
+            if (mathOperator == ' ')
+            {
+                firstOperand = (firstOperand * 10) + 2;
+                operationDisplay.Text = firstOperand.ToString();
+            }
+            else
+            {
+                secondOperand = (secondOperand * 10) + 2;
+                operationDisplay.Text = secondOperand.ToString();
+            }
+        }
+
+        private void btn_number3_Click(object sender, RoutedEventArgs e)
+        {
+            if (mathOperator == ' ')
+            {
+                firstOperand = (firstOperand * 10) + 3;
+                operationDisplay.Text = firstOperand.ToString();
+            }
+            else
+            {
+                secondOperand = (secondOperand * 10) + 3;
+                operationDisplay.Text = secondOperand.ToString();
+            }
+        }
+
+        private void btn_number4_Click(object sender, RoutedEventArgs e)
+        {
+            if (mathOperator == ' ')
+            {
+                firstOperand = (firstOperand * 10) + 4;
+                operationDisplay.Text = firstOperand.ToString();
+            }
+            else
+            {
+                secondOperand = (secondOperand * 10) + 4;
+                operationDisplay.Text = secondOperand.ToString();
+            }
+        }
+
+        private void btn_number5_Click(object sender, RoutedEventArgs e)
+        {
+            if (mathOperator == ' ')
+            {
+                firstOperand = (firstOperand * 10) + 5;
+                operationDisplay.Text = firstOperand.ToString();
+            }
+            else
+            {
+                secondOperand = (secondOperand * 10) + 5;
+                operationDisplay.Text = secondOperand.ToString();
+            }
+        }
+
+        private void btn_number6_Click(object sender, RoutedEventArgs e)
+        {
+            if (mathOperator == ' ')
+            {
+                firstOperand = (firstOperand * 10) + 6;
+                operationDisplay.Text = firstOperand.ToString();
+            }
+            else
+            {
+                secondOperand = (secondOperand * 10) + 6;
+                operationDisplay.Text = secondOperand.ToString();
+            }
+        }
+
+        private void btn_number7_Click(object sender, RoutedEventArgs e)
+        {
+            if (mathOperator == ' ')
+            {
+                firstOperand = (firstOperand * 10) + 7;
+                operationDisplay.Text = firstOperand.ToString();
+            }
+            else
+            {
+                secondOperand = (secondOperand * 10) + 7;
+                operationDisplay.Text = secondOperand.ToString();
+            }
+        }
+
+        private void btn_number8_Click(object sender, RoutedEventArgs e)
+        {
+            if (mathOperator == ' ')
+            {
+                firstOperand = (firstOperand * 10) + 8;
+                operationDisplay.Text = firstOperand.ToString();
+            }
+            else
+            {
+                secondOperand = (secondOperand * 10) + 8;
+                operationDisplay.Text = secondOperand.ToString();
+            }
+        }
+
+        private void btn_number9_Click(object sender, RoutedEventArgs e)
+        {
+            if (mathOperator == ' ')
+            {
+                firstOperand = (firstOperand * 10) + 9;
+                operationDisplay.Text = firstOperand.ToString();
+            }
+            else
+            {
+                secondOperand = (secondOperand * 10) + 9;
+                operationDisplay.Text = secondOperand.ToString();
+            }
+        }
+
+        private void btn_number0_Click(object sender, RoutedEventArgs e)
+        {
+            if (mathOperator == ' ')
+            {
+                firstOperand = (firstOperand * 10) + 0;
+                operationDisplay.Text = firstOperand.ToString();
+            }
+            else
+            {
+                secondOperand = (secondOperand * 10) + 0;
+                operationDisplay.Text = secondOperand.ToString();
+            }
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            mathOperator = 'A';
+            operationDisplay.Text = "0";
+        }
+
+        private void btnSubtract_Click(object sender, RoutedEventArgs e)
+        {
+            mathOperator = 'S';
+            operationDisplay.Text = "0";
+        }
+
+        private void btnMultiply_Click(object sender, RoutedEventArgs e)
+        {
+            mathOperator = 'M';
+            operationDisplay.Text = "0";
+        }
+
+        private void btnDivide_Click(object sender, RoutedEventArgs e)
+        {
+            mathOperator = 'D';
+            operationDisplay.Text = "0";
+        }
+
+        private void btnInvertSign_Click(object sender, RoutedEventArgs e)
+        {
+            if(mathOperator==' ')
+            {
+                firstOperand *= -1;
+                operationDisplay.Text = firstOperand.ToString();
+            }
+            else
+            {
+                secondOperand *= -1;
+                operationDisplay.Text = secondOperand.ToString();
+            }
+        }
+
+        private void btnEquals_Click(object sender, RoutedEventArgs e)
+        {
+            long result = 0;
+            resultNum++;
+            switch (mathOperator)
+            {
+                case 'A':
+                    result = (firstOperand + secondOperand);
+                    break;
+                case 'M':
+                    result = (firstOperand * secondOperand);
+                    break;
+                case 'S':
+                    result = (firstOperand - secondOperand);
+                    break;
+                case 'D':
+                    result = (firstOperand / secondOperand);
+                    break;
+                case 'E':
+                    result = (firstOperand % secondOperand);
+                    break;
+                default:
+                    result = firstOperand;
+                    break;
+            }
+
+            if (resultNum > 1)
+                previousOperationDisplay.Text = resultDisplay.Text;
+
+            resultDisplay.Text = result.ToString();
+            firstOperand = 0;
+            secondOperand = 0;
+            mathOperator = ' ';
+            operationDisplay.Text = "0";
+
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            firstOperand = 0;
+            secondOperand = 0;
+            mathOperator = ' ';
+
+            operationDisplay.Text = "0";
+            resultDisplay.Text = "0";
+        }
+
+        private void btnModulus_Click(object sender, RoutedEventArgs e)
+        {
+            mathOperator = 'E';
+            operationDisplay.Text = "0";
+        }
+    }
+}
